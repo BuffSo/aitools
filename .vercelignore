@@ -1,0 +1,12 @@
+# Vercel CLI 업로드 제외 (.gitignore 와 별개로 적용됨)
+# 빌드/런타임과 무관한 자료 — 특히 ref/ 는 긴 한글 파일명으로 ENAMETOOLONG 유발
+ref/
+assets/
+tasks/
+tests/
+SPEC.md
+
+# 산출물/로그
+playwright-report/
+test-results/
+*.log

@@ -40,7 +40,7 @@ export function DemoForm() {
         <h2 className="mt-5 text-2xl font-bold text-brand-ink">
           신청이 접수되었습니다
         </h2>
-        <p className="mt-2 text-brand-ink/60">
+        <p className="mt-2 text-brand-ink/70">
           빠른 시일 내에 담당자가 연락드리겠습니다. 감사합니다.
         </p>
         <Link

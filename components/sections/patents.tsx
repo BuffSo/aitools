@@ -25,13 +25,13 @@ export function Patents() {
           viewport={{ once: true, amount: 0.4 }}
           className="mx-auto max-w-2xl text-center"
         >
-          <span className="text-sm font-bold tracking-[0.25em] text-brand-mid uppercase sm:text-base">
+          <span className="text-sm font-bold tracking-[0.25em] text-brand uppercase sm:text-base">
             특허 / 기술 경쟁력
           </span>
           <h2 className="mt-3 text-3xl font-bold tracking-tight text-brand-ink sm:text-4xl">
             독자적인 AI 기술과 특허로 차별화합니다
           </h2>
-          <p className="mt-4 text-lg text-brand-ink/60">
+          <p className="mt-4 text-lg text-brand-ink/70">
             에이아이툴즈는 독자적인 AI 기술과 특허를 기반으로 차별화된 광고
             자동화 솔루션을 제공합니다.
           </p>
@@ -48,6 +48,7 @@ export function Patents() {
         <div className="mt-12 text-center">
           <Link
             href="/patent"
+            prefetch={false}
             className={cn(
               buttonVariants({ variant: "outline" }),
               "h-11 gap-2 border-brand/30 px-5 text-base text-brand hover:bg-brand/5 hover:text-brand",

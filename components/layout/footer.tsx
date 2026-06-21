@@ -47,21 +47,21 @@ export function Footer() {
             <h2 className="text-sm font-semibold text-white">회사 정보</h2>
             <dl className="mt-3 space-y-1.5 text-sm">
               <div className="flex gap-2">
-                <dt className="text-white/45">회사명</dt>
+                <dt className="text-white/60">회사명</dt>
                 <dd>
                   {COMPANY.nameKo} ({COMPANY.nameEn})
                 </dd>
               </div>
               <div className="flex gap-2">
-                <dt className="text-white/45">대표자</dt>
+                <dt className="text-white/60">대표자</dt>
                 <dd>{COMPANY.ceo}</dd>
               </div>
               <div className="flex gap-2">
-                <dt className="text-white/45">사업자번호</dt>
+                <dt className="text-white/60">사업자번호</dt>
                 <dd>{COMPANY.bizNo}</dd>
               </div>
               <div className="flex gap-2">
-                <dt className="text-white/45">이메일</dt>
+                <dt className="text-white/60">이메일</dt>
                 <dd>
                   <a
                     href={`mailto:${COMPANY.email}`}
@@ -84,6 +84,7 @@ export function Footer() {
             </address>
             <Link
               href="/contact"
+              prefetch={false}
               className="mt-3 inline-block text-sm font-medium text-brand-glow transition-colors hover:text-white"
             >
               오시는 길 →
@@ -92,15 +93,23 @@ export function Footer() {
         </div>
 
         {/* 하단 바 */}
-        <div className="mt-8 flex flex-col gap-3 border-t border-white/10 pt-5 text-xs text-white/45 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-8 flex flex-col gap-3 border-t border-white/10 pt-5 text-xs text-white/60 sm:flex-row sm:items-center sm:justify-between">
           <p>
             © {COMPANY.copyrightYear} {COMPANY.legalName} All rights reserved.
           </p>
           <div className="flex gap-4">
-            <Link href="/privacy" className="transition-colors hover:text-white">
+            <Link
+              href="/privacy"
+              prefetch={false}
+              className="transition-colors hover:text-white"
+            >
               개인정보처리방침
             </Link>
-            <Link href="/terms" className="transition-colors hover:text-white">
+            <Link
+              href="/terms"
+              prefetch={false}
+              className="transition-colors hover:text-white"
+            >
               이용약관
             </Link>
           </div>

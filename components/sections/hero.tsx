@@ -56,7 +56,7 @@ export function Hero() {
 
           <motion.p
             variants={item}
-            className="mt-6 max-w-xl text-lg leading-relaxed text-brand-ink/60"
+            className="mt-6 max-w-xl text-lg leading-relaxed text-brand-ink/70"
           >
             에이아이툴즈는 인공지능으로 광고의 성과를 분석하고, 의사결정하여,
             최적의 광고 운영 솔루션을 제공합니다.
@@ -75,6 +75,7 @@ export function Hero() {
             </Link>
             <Link
               href="/solution"
+              prefetch={false}
               className={cn(
                 buttonVariants({ variant: "outline" }),
                 "h-12 gap-2 border-brand/30 px-6 text-base text-brand hover:bg-brand/5 hover:text-brand",
@@ -86,14 +87,14 @@ export function Hero() {
           </motion.div>
 
           <motion.div variants={item} className="mt-10">
-            <p className="text-xs font-semibold tracking-[0.15em] text-brand-ink/40 uppercase">
+            <p className="text-xs font-semibold tracking-[0.15em] text-brand-ink/65 uppercase">
               연동 플랫폼
             </p>
             <div className="mt-3 flex flex-wrap items-center gap-x-7 gap-y-2">
               {PLATFORMS.map((p) => (
                 <span
                   key={p}
-                  className="text-base font-bold text-brand-ink/45 transition-colors hover:text-brand-ink/70"
+                  className="text-base font-bold text-brand-ink/60 transition-colors hover:text-brand-ink/80"
                 >
                   {p}
                 </span>
@@ -118,7 +119,7 @@ export function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2, duration: 0.6 }}
-        className="absolute bottom-6 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-1 text-brand-ink/40 sm:flex"
+        className="absolute bottom-6 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-1 text-brand-ink/55 sm:flex"
       >
         <span className="text-[0.65rem] font-medium tracking-[0.2em] uppercase">
           Scroll

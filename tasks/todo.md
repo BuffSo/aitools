@@ -89,11 +89,20 @@
 
 ## Phase 5 — Polish & Verify
 
-### [ ] T10. 반응형 · 접근성 · 애니메이션 폴리시
+### [x] T10. 반응형 · 접근성 · 애니메이션 폴리시 ✅
 - **의존성**: T2~T9.
 - **구현**: SPEC §10.2 반응형 규칙 전 섹션 점검 / 접근성(시맨틱·alt·focus·색대비 AA) / Framer Motion 진입 애니메이션·GNB 스크롤 일관화 / 색상은 토큰만 사용 확인.
 - **AC**: 데스크톱/태블릿/모바일 레이아웃 규칙 충족 / 키보드 내비 / 명백한 a11y 이슈 없음.
 - **검증**: 수동 반응형 + Lighthouse(성능·접근성) 점검.
+- **반영 내역**:
+  - `<main id="main-content">` 랜드마크 + "본문 바로가기" 스킵 링크(키보드 첫 포커스).
+  - 모바일 드로어 `role="dialog"`/`aria-modal` + 포커스 관리(열 때 진입, 닫을 때 햄버거 복귀).
+  - `prefers-reduced-motion`: `<MotionConfig reducedMotion="user">`(Framer Motion) + CSS 미디어쿼리(ping/bounce/spin).
+  - `:focus-visible` 키보드 포커스 링(마우스 클릭엔 미표시).
+  - 색 대비 AA: 옅은 회색 톤 상향(`/40·/45·/55·/60`→`/55~/70`), footer 다크 대비(`white/45`→`/60`), eyebrow `brand-mid`(4.2:1)→`brand`(8.3:1).
+  - KPI 카운트업을 `enableScrollSpy`→motion `onViewportEnter`로 교체(콘솔 경고 제거).
+  - 2차(미구현) 라우트 링크 `prefetch={false}`(404 prefetch·콘솔 노이즈 제거).
+  - **검증 결과**: axe-core WCAG 2.0/2.1 A·AA **위반 0**(홈 데스크톱·모바일 390px·데모) / 프로덕션 콘솔 에러·실패 요청 0 / typecheck·lint·vitest 21·build·e2e 통과.
 
 ### [ ] T11. 최종 검증
 - **의존성**: 전체.

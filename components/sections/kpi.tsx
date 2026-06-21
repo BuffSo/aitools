@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import CountUp from "react-countup";
 import { motion, type Variants } from "motion/react";
@@ -25,7 +26,7 @@ export function Kpi() {
           whileInView="show"
           viewport={{ once: true, amount: 0.4 }}
         >
-          <span className="text-sm font-bold tracking-[0.25em] text-brand-mid uppercase sm:text-base">
+          <span className="text-sm font-bold tracking-[0.25em] text-brand uppercase sm:text-base">
             기술 경쟁력
           </span>
           <h2 className="mt-3 text-3xl font-bold tracking-tight text-brand-ink sm:text-4xl">
@@ -33,12 +34,13 @@ export function Kpi() {
             <br />
             AI TOOLS
           </h2>
-          <p className="mt-4 text-lg text-brand-ink/60">
+          <p className="mt-4 text-lg text-brand-ink/70">
             특허 기반 AI 기술과 폭넓은 플랫폼 연동으로 광고 운영의 새로운 기준을
             만듭니다.
           </p>
           <Link
             href="/service"
+            prefetch={false}
             className={cn(buttonVariants(), "mt-8 h-11 gap-2 px-5 text-base")}
           >
             서비스 자세히 보기
@@ -59,10 +61,14 @@ export function Kpi() {
 
 function StatItem({ stat, index }: { stat: KpiStat; index: number }) {
   const { Icon, end, start, suffix, decimals, duration, label } = stat;
+  // 뷰포트 진입 시 카운트업 시작 (react-countup 의 enableScrollSpy 대신 motion 으로
+  // 트리거 — scrollSpy 마운트 레이스로 인한 콘솔 경고 제거)
+  const [started, setStarted] = useState(false);
   return (
     <motion.div
       initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
+      onViewportEnter={() => setStarted(true)}
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.45, delay: index * 0.08, ease: "easeOut" }}
     >
@@ -70,18 +76,23 @@ function StatItem({ stat, index }: { stat: KpiStat; index: number }) {
         <Icon className="size-5" aria-hidden />
       </span>
       <p className="mt-3 text-3xl font-extrabold text-brand sm:text-4xl">
-        <CountUp
-          end={end}
-          start={start}
-          duration={duration}
-          decimals={decimals}
-          suffix={suffix}
-          separator=","
-          enableScrollSpy
-          scrollSpyOnce
-        />
+        {started ? (
+          <CountUp
+            end={end}
+            start={start}
+            duration={duration}
+            decimals={decimals}
+            suffix={suffix}
+            separator=","
+          />
+        ) : (
+          <>
+            {start.toLocaleString()}
+            {suffix}
+          </>
+        )}
       </p>
-      <p className="mt-1 text-sm font-medium text-brand-ink/60">{label}</p>
+      <p className="mt-1 text-sm font-medium text-brand-ink/70">{label}</p>
     </motion.div>
   );
 }

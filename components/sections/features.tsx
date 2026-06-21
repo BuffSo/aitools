@@ -23,13 +23,13 @@ export function Features() {
           viewport={{ once: true, amount: 0.4 }}
           className="mx-auto max-w-2xl text-center"
         >
-          <span className="text-sm font-bold tracking-[0.25em] text-brand-mid uppercase sm:text-base">
+          <span className="text-sm font-bold tracking-[0.25em] text-brand uppercase sm:text-base">
             핵심 기능
           </span>
           <h2 className="mt-3 text-3xl font-bold tracking-tight text-brand-ink sm:text-4xl">
             AI가 모든 과정을 자동으로 처리합니다
           </h2>
-          <p className="mt-4 text-lg text-brand-ink/60">
+          <p className="mt-4 text-lg text-brand-ink/70">
             광고 운영의 복잡한 업무를 AI가 자동화하여 최적의 성과를 만들어냅니다.
           </p>
         </motion.div>
@@ -63,13 +63,14 @@ function FeatureCard({
     >
       <Link
         href={href}
+        prefetch={false}
         className="group flex h-full min-h-[12.5rem] flex-col rounded-2xl border border-border bg-white p-6 shadow-sm transition-all hover:-translate-y-1 hover:border-brand hover:shadow-md"
       >
         <span className="grid size-12 place-items-center rounded-xl bg-brand/10 text-brand transition-colors group-hover:bg-brand group-hover:text-white">
           <Icon className="size-6" aria-hidden />
         </span>
         <h3 className="mt-5 text-lg font-bold text-brand-ink">{name}</h3>
-        <p className="mt-2 text-sm leading-relaxed text-brand-ink/60">{desc}</p>
+        <p className="mt-2 text-sm leading-relaxed text-brand-ink/70">{desc}</p>
         <span className="mt-auto inline-flex items-center gap-1 pt-4 text-sm font-semibold text-brand">
           자세히 보기
           <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />

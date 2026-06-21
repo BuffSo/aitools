@@ -63,4 +63,27 @@ describe("Header / GNB", () => {
       screen.queryByRole("navigation", { name: "모바일 메뉴" }),
     ).not.toBeInTheDocument();
   });
+
+  it("provides a skip-to-content link as the first focusable element", () => {
+    render(<Header />);
+    const skip = screen.getByRole("link", { name: /본문 바로가기/ });
+    expect(skip).toHaveAttribute("href", "#main-content");
+  });
+
+  it("exposes the mobile drawer as a modal dialog", async () => {
+    const user = userEvent.setup();
+    render(<Header />);
+    await user.click(screen.getByRole("button", { name: "메뉴 열기" }));
+    const dialog = screen.getByRole("dialog");
+    expect(dialog).toHaveAttribute("aria-modal", "true");
+  });
+
+  it("returns focus to the hamburger trigger after closing the drawer", async () => {
+    const user = userEvent.setup();
+    render(<Header />);
+    const hamburger = screen.getByRole("button", { name: "메뉴 열기" });
+    await user.click(hamburger);
+    await user.click(screen.getByRole("button", { name: "메뉴 닫기" }));
+    expect(hamburger).toHaveFocus();
+  });
 });

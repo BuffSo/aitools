@@ -26,7 +26,7 @@ export function AiDiagram() {
           viewport={{ once: true, amount: 0.4 }}
           className="mx-auto max-w-2xl text-center"
         >
-          <span className="text-sm font-bold tracking-[0.25em] text-brand-mid uppercase sm:text-base">
+          <span className="text-sm font-bold tracking-[0.25em] text-brand uppercase sm:text-base">
             AI MARKETING OS
           </span>
           <h2 className="mt-3 text-3xl font-bold tracking-tight text-brand-ink sm:text-4xl">
@@ -139,7 +139,7 @@ function NodeCard({ node, index }: { node: DiagramNode; index: number }) {
       </span>
       <div className="min-w-0">
         <p className="font-semibold text-brand-ink">{name}</p>
-        <p className="text-sm leading-snug text-brand-ink/55">{sub}</p>
+        <p className="text-sm leading-snug text-brand-ink/65">{sub}</p>
       </div>
     </motion.div>
   );

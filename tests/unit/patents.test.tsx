@@ -25,11 +25,11 @@ describe("Patents (섹션 04)", () => {
     ).toBeInTheDocument();
 
     for (const name of [
-      "AI 예산 최적화 특허",
-      "AI 광고 소재 생성 특허",
-      "성과 기반 수익 정산 특허",
-      "멀티플랫폼 데이터 통합 특허",
-      "AI 에이전트 특허",
+      "AI 멀티채널 입찰 최적화",
+      "생성형 AI 광고 소재 생성",
+      "AI 타겟 오디언스 확장",
+      "성과 기반 수익 정산",
+      "멀티플랫폼 AI 에이전트",
     ]) {
       expect(screen.getByText(name)).toBeInTheDocument();
     }

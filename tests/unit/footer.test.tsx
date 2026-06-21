@@ -28,7 +28,7 @@ describe("Footer", () => {
     render(<Footer />);
     const footer = screen.getByRole("contentinfo");
 
-    expect(within(footer).getByText(/이주호/)).toBeInTheDocument();
+    expect(within(footer).getByText(/서동구/)).toBeInTheDocument();
     expect(within(footer).getByText(/728-81-04234/)).toBeInTheDocument();
     expect(within(footer).getByText(/aitoolz@kakao\.com/)).toBeInTheDocument();
     expect(within(footer).getByText(/김포시/)).toBeInTheDocument();

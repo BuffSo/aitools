@@ -1,9 +1,9 @@
 import {
-  Gauge,
-  Sparkles,
-  Target,
-  CircleDollarSign,
-  Bot,
+  SlidersHorizontal,
+  PenTool,
+  UsersRound,
+  Receipt,
+  Orbit,
   type LucideIcon,
 } from "lucide-react";
 
@@ -42,7 +42,7 @@ export const PATENTS: Patent[] = [
       "멀티암드밴딧 동적 예산 재배분",
       "이상 트래픽(부정 클릭) 자동 탐지·차단",
     ],
-    Icon: Gauge,
+    Icon: SlidersHorizontal,
   },
   {
     number: "제2호",
@@ -58,7 +58,7 @@ export const PATENTS: Patent[] = [
       "Thompson Sampling A/B 테스트 자동 최적화",
       "소재 피로도 감지·자동 교체",
     ],
-    Icon: Sparkles,
+    Icon: PenTool,
   },
   {
     number: "제3호",
@@ -73,7 +73,7 @@ export const PATENTS: Patent[] = [
       "크로스플랫폼 유사 타겟 자동 확장",
       "실시간 행동 데이터 기반 동적 갱신",
     ],
-    Icon: Target,
+    Icon: UsersRound,
   },
   {
     number: "제4호",
@@ -88,7 +88,7 @@ export const PATENTS: Patent[] = [
       "SHA-256 해시 기반 정산 데이터 무결성 검증",
       "광고주·매체·대행 3자 정산 자동 분배",
     ],
-    Icon: CircleDollarSign,
+    Icon: Receipt,
   },
   {
     number: "제5호",
@@ -103,6 +103,6 @@ export const PATENTS: Patent[] = [
       "증분학습(EWC)으로 신규 플랫폼 유연 통합",
       "설명가능 AI(XAI·SHAP) 의사결정 리포트",
     ],
-    Icon: Bot,
+    Icon: Orbit,
   },
 ];

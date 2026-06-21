@@ -86,13 +86,6 @@ export function Header() {
 
         {/* 데스크톱 우측 CTA */}
         <div className="hidden items-center gap-4 md:flex">
-          <Link
-            href="/login"
-            prefetch={false}
-            className="text-sm font-medium text-brand-ink/70 transition-colors hover:text-brand"
-          >
-            로그인
-          </Link>
           <Link href="/demo" className={cn(buttonVariants(), "h-9 px-4")}>
             데모 신청
           </Link>
@@ -177,17 +170,6 @@ export function Header() {
                 className={cn(buttonVariants(), "h-11 w-full")}
               >
                 데모 신청
-              </Link>
-              <Link
-                href="/login"
-                prefetch={false}
-                onClick={closeMobile}
-                className={cn(
-                  buttonVariants({ variant: "outline" }),
-                  "h-11 w-full border-brand/30 text-brand hover:bg-brand/5 hover:text-brand",
-                )}
-              >
-                로그인
               </Link>
             </div>
           </div>

@@ -26,7 +26,7 @@ vi.mock("next/link", () => ({
 }));
 
 describe("Header / GNB", () => {
-  it("renders the 7 primary nav menus", () => {
+  it("renders the 6 primary nav menus (뉴스 removed)", () => {
     render(<Header />);
     const primary = screen.getByRole("navigation", { name: "주 메뉴" });
     for (const label of [
@@ -35,11 +35,19 @@ describe("Header / GNB", () => {
       "솔루션",
       "특허/기술",
       "회사소개",
-      "뉴스",
       "문의하기",
     ]) {
       expect(within(primary).getByText(label)).toBeInTheDocument();
     }
+    // 뉴스 메뉴 제거됨
+    expect(within(primary).queryByText("뉴스")).not.toBeInTheDocument();
+  });
+
+  it("no longer renders a 로그인 link", () => {
+    render(<Header />);
+    expect(
+      screen.queryByRole("link", { name: "로그인" }),
+    ).not.toBeInTheDocument();
   });
 
   it("toggles the mobile drawer open and closed", async () => {

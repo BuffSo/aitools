@@ -74,21 +74,14 @@ export function Footer() {
             </dl>
           </div>
 
-          {/* 오시는 길 */}
+          {/* 주소 */}
           <div>
-            <h2 className="text-sm font-semibold text-white">오시는 길</h2>
+            <h2 className="text-sm font-semibold text-white">주소</h2>
             <address className="mt-3 text-sm not-italic leading-relaxed text-white/55">
               (우) {COMPANY.zip}
               <br />
               {COMPANY.address}
             </address>
-            <Link
-              href="/contact"
-              prefetch={false}
-              className="mt-3 inline-block text-sm font-medium text-brand-glow transition-colors hover:text-white"
-            >
-              오시는 길 →
-            </Link>
           </div>
         </div>
 

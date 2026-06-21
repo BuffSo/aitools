@@ -22,5 +22,10 @@ test("home page loads with brand title, logo, and no console errors", async ({
     page.getByRole("link", { name: "데모 신청" }).first(),
   ).toBeVisible();
 
+  // 푸터 회사정보 노출
+  const footer = page.getByRole("contentinfo");
+  await expect(footer.getByText("728-81-04234")).toBeVisible();
+  await expect(footer.getByText(/©\s*2026/)).toBeVisible();
+
   expect(errors, errors.join("\n")).toEqual([]);
 });

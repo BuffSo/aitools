@@ -1,8 +1,6 @@
 "use client";
 
-import Link from "next/link";
 import { motion, type Variants } from "motion/react";
-import { ArrowRight } from "lucide-react";
 
 import { SERVICE_FEATURES, type ServiceFeature } from "@/content/services";
 
@@ -37,7 +35,7 @@ export function Features() {
         {/* 3×2 그리드 */}
         <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {SERVICE_FEATURES.map((feature, i) => (
-            <FeatureCard key={feature.href} feature={feature} index={i} />
+            <FeatureCard key={feature.name} feature={feature} index={i} />
           ))}
         </div>
       </div>
@@ -52,7 +50,7 @@ function FeatureCard({
   feature: ServiceFeature;
   index: number;
 }) {
-  const { Icon, name, desc, href } = feature;
+  const { Icon, name, desc } = feature;
   return (
     <motion.div
       variants={reveal}
@@ -60,22 +58,13 @@ function FeatureCard({
       whileInView="show"
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.5, delay: index * 0.08, ease: "easeOut" }}
+      className="flex h-full min-h-[12.5rem] flex-col rounded-2xl border border-border bg-white p-6 shadow-sm transition-colors hover:border-brand/40"
     >
-      <Link
-        href={href}
-        prefetch={false}
-        className="group flex h-full min-h-[12.5rem] flex-col rounded-2xl border border-border bg-white p-6 shadow-sm transition-all hover:-translate-y-1 hover:border-brand hover:shadow-md"
-      >
-        <span className="grid size-12 place-items-center rounded-xl bg-brand/10 text-brand transition-colors group-hover:bg-brand group-hover:text-white">
-          <Icon className="size-6" aria-hidden />
-        </span>
-        <h3 className="mt-5 text-lg font-bold text-brand-ink">{name}</h3>
-        <p className="mt-2 text-sm leading-relaxed text-brand-ink/70">{desc}</p>
-        <span className="mt-auto inline-flex items-center gap-1 pt-4 text-sm font-semibold text-brand">
-          자세히 보기
-          <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
-        </span>
-      </Link>
+      <span className="grid size-12 place-items-center rounded-xl bg-brand/10 text-brand">
+        <Icon className="size-6" aria-hidden />
+      </span>
+      <h3 className="mt-5 text-lg font-bold text-brand-ink">{name}</h3>
+      <p className="mt-2 text-sm leading-relaxed text-brand-ink/70">{desc}</p>
     </motion.div>
   );
 }

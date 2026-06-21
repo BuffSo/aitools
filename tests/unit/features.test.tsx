@@ -18,7 +18,7 @@ vi.mock("next/link", () => ({
 }));
 
 describe("Features (섹션 02)", () => {
-  it("renders the section title and all 6 feature cards with detail links", () => {
+  it("renders the section title and all 6 feature cards (info only, no detail links)", () => {
     render(<Features />);
     expect(
       screen.getByRole("heading", { name: /모든 과정을 자동으로 처리합니다/ }),
@@ -35,8 +35,7 @@ describe("Features (섹션 02)", () => {
       expect(screen.getByText(name)).toBeInTheDocument();
     }
 
-    const detailLinks = screen.getAllByRole("link", { name: /자세히 보기/ });
-    expect(detailLinks).toHaveLength(6);
-    expect(detailLinks[0]).toHaveAttribute("href", "/service/budget");
+    // "자세히 보기" 상세 링크 제거됨 — 카드는 정보용 (404 방지)
+    expect(screen.queryByText("자세히 보기")).not.toBeInTheDocument();
   });
 });

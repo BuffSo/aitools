@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function DemoPage() {
   return (
-    <section className="bg-brand-bg/40 pt-28 pb-20 lg:pt-32">
+    <section className="flex-1 bg-brand-bg/40 pt-28 pb-20 lg:pt-32">
       <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <span className="text-sm font-bold tracking-[0.25em] text-brand uppercase sm:text-base">

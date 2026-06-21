@@ -6,8 +6,7 @@ import { ArrowRight, ChevronDown, Download, TrendingUp, Zap } from "lucide-react
 
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
-
-const PLATFORMS = ["Google Ads", "Meta", "NAVER", "kakao"];
+import { PLATFORM_LOGOS } from "@/components/icons/platforms";
 
 const container: Variants = {
   hidden: {},
@@ -90,13 +89,24 @@ export function Hero() {
             <p className="text-xs font-semibold tracking-[0.15em] text-brand-ink/65 uppercase">
               연동 플랫폼
             </p>
-            <div className="mt-3 flex flex-wrap items-center gap-x-7 gap-y-2">
-              {PLATFORMS.map((p) => (
+            <div className="mt-3 flex flex-wrap items-center gap-x-6 gap-y-3">
+              {PLATFORM_LOGOS.map((p) => (
                 <span
-                  key={p}
-                  className="text-base font-bold text-brand-ink/60 transition-colors hover:text-brand-ink/80"
+                  key={p.name}
+                  role="img"
+                  aria-label={p.name}
+                  className="inline-flex items-center gap-1.5 opacity-90 transition-opacity hover:opacity-100"
                 >
-                  {p}
+                  <p.Mark className="size-5 shrink-0" />
+                  <span
+                    aria-hidden
+                    className={cn(
+                      "text-base font-bold tracking-tight",
+                      p.labelClass,
+                    )}
+                  >
+                    {p.label}
+                  </span>
                 </span>
               ))}
             </div>

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion, type Variants } from "motion/react";
-import { ArrowRight, ChevronDown, Download, TrendingUp, Zap } from "lucide-react";
+import { ArrowRight, ChevronDown, TrendingUp, Zap } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
@@ -74,14 +74,13 @@ export function Hero() {
             </Link>
             <Link
               href="/solution"
-              prefetch={false}
               className={cn(
                 buttonVariants({ variant: "outline" }),
-                "h-12 gap-2 border-brand/30 px-6 text-base text-brand hover:bg-brand/5 hover:text-brand",
+                "group h-12 gap-2 border-brand/30 px-6 text-base text-brand hover:bg-brand/5 hover:text-brand",
               )}
             >
-              솔루션 소개서 다운로드
-              <Download className="size-4" />
+              솔루션 자세히 보기
+              <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
             </Link>
           </motion.div>
 

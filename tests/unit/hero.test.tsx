@@ -40,7 +40,7 @@ describe("Hero", () => {
       screen.getByRole("link", { name: /데모 신청하기/ }),
     ).toBeInTheDocument();
     expect(
-      screen.getByRole("link", { name: /솔루션 소개서 다운로드/ }),
+      screen.getByRole("link", { name: /솔루션 자세히 보기/ }),
     ).toBeInTheDocument();
     for (const p of ["Google Ads", "Meta", "NAVER", "kakao"]) {
       expect(screen.getByText(p)).toBeInTheDocument();

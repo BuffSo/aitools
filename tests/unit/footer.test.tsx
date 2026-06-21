@@ -35,10 +35,12 @@ describe("Footer", () => {
     expect(within(footer).getByText(/©\s*2026/)).toBeInTheDocument();
   });
 
-  it("lists quick-link menus (without 홈)", () => {
+  it("renders SNS links and no redundant GNB quick-links", () => {
     render(<Footer />);
     const footer = screen.getByRole("contentinfo");
-    expect(within(footer).getByText("서비스")).toBeInTheDocument();
-    expect(within(footer).getByText("문의하기")).toBeInTheDocument();
+    expect(within(footer).getByRole("link", { name: "LinkedIn" })).toBeVisible();
+    expect(within(footer).getByRole("link", { name: "YouTube" })).toBeVisible();
+    // GNB 중복 메뉴(바로가기)는 제거됨
+    expect(within(footer).queryByText("서비스")).not.toBeInTheDocument();
   });
 });

@@ -1,6 +1,7 @@
 // SPEC §2·§3·§9 — 회사 정보 단일 소스
 export const COMPANY = {
   nameKo: "에이아이툴즈",
+  legalNameKo: "(주)에이아이툴즈",
   nameEn: "AI TOOLS",
   legalName: "AI TOOLS Co., Ltd.",
   ceo: "서동구",

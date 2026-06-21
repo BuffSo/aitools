@@ -6,6 +6,7 @@ export const COMPANY = {
   legalName: "AI TOOLS Co., Ltd.",
   ceo: "서동구",
   bizNo: "728-81-04234",
+  foundedAt: "2026.05.11",
   email: "aitoolz@kakao.com",
   zip: "10049",
   address: "경기도 김포시 김포한강1로 51번길 18 (장기동, 신우프라자)",

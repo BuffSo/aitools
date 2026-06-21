@@ -71,10 +71,6 @@ export function Footer() {
                   </a>
                 </dd>
               </div>
-              <div className="flex gap-2">
-                <dt className="text-white/45">대표전화</dt>
-                <dd>{COMPANY.phone}</dd>
-              </div>
             </dl>
           </div>
 

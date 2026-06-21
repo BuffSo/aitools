@@ -23,7 +23,7 @@ export function Features() {
           viewport={{ once: true, amount: 0.4 }}
           className="mx-auto max-w-2xl text-center"
         >
-          <span className="text-xs font-bold tracking-[0.25em] text-brand-mid uppercase">
+          <span className="text-sm font-bold tracking-[0.25em] text-brand-mid uppercase sm:text-base">
             핵심 기능
           </span>
           <h2 className="mt-3 text-3xl font-bold tracking-tight text-brand-ink sm:text-4xl">

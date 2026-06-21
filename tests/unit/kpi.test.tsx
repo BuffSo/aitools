@@ -34,7 +34,7 @@ describe("Capability stats (섹션 03)", () => {
     // 신규 법인이라 실적 수치는 없어야 함
     expect(labels).not.toContain("누적 고객사");
     expect(labels).not.toContain("누적 캠페인");
-    expect(KPI_STATS.find((s) => s.label === "출원 예정 특허")).toMatchObject({
+    expect(KPI_STATS.find((s) => s.label === "출원 특허")).toMatchObject({
       end: 5,
       suffix: "건",
     });

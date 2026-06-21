@@ -25,7 +25,7 @@ export function Kpi() {
           whileInView="show"
           viewport={{ once: true, amount: 0.4 }}
         >
-          <span className="text-xs font-bold tracking-[0.25em] text-brand-mid uppercase">
+          <span className="text-sm font-bold tracking-[0.25em] text-brand-mid uppercase sm:text-base">
             기술 경쟁력
           </span>
           <h2 className="mt-3 text-3xl font-bold tracking-tight text-brand-ink sm:text-4xl">

@@ -18,7 +18,7 @@ vi.mock("next/link", () => ({
 }));
 
 describe("Patents (섹션 04)", () => {
-  it("renders 5 patent cards with title + 출원 예정 badge only (no description)", () => {
+  it("renders 5 patent cards with title only (no badge, no description)", () => {
     render(<Patents />);
     expect(
       screen.getByRole("heading", { name: /특허로 차별화합니다/ }),
@@ -34,8 +34,8 @@ describe("Patents (섹션 04)", () => {
       expect(screen.getByText(name)).toBeInTheDocument();
     }
 
-    expect(screen.getAllByText("출원 예정")).toHaveLength(5);
-    // 설명 카피는 넣지 않음 (기획서 원문 설명 부재 확인)
+    // "출원 예정" 배지 제거됨 / 설명 카피 없음
+    expect(screen.queryByText("출원 예정")).not.toBeInTheDocument();
     expect(
       screen.queryByText(/실시간 광고 예산을 자동 배분/),
     ).not.toBeInTheDocument();

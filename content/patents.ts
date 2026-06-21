@@ -12,7 +12,7 @@ export interface Patent {
   Icon: LucideIcon;
 }
 
-// SPEC §4.5·§8 — 특허 5종. 전부 "출원 예정", 제목만 노출(설명 카피 없음).
+// SPEC §4.5·§8 — 특허 5종. 제목만 노출(설명 카피·배지 없음).
 export const PATENTS: Patent[] = [
   { name: "AI 예산 최적화 특허", Icon: Brain },
   { name: "AI 광고 소재 생성 특허", Icon: PenTool },

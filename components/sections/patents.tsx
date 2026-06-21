@@ -25,7 +25,7 @@ export function Patents() {
           viewport={{ once: true, amount: 0.4 }}
           className="mx-auto max-w-2xl text-center"
         >
-          <span className="text-xs font-bold tracking-[0.25em] text-brand-mid uppercase">
+          <span className="text-sm font-bold tracking-[0.25em] text-brand-mid uppercase sm:text-base">
             특허 / 기술 경쟁력
           </span>
           <h2 className="mt-3 text-3xl font-bold tracking-tight text-brand-ink sm:text-4xl">
@@ -79,9 +79,6 @@ function PatentCard({ patent, index }: { patent: Patent; index: number }) {
       <h3 className="mt-4 text-sm font-bold leading-snug text-brand-ink">
         {name}
       </h3>
-      <span className="mt-3 inline-flex items-center rounded-full bg-amber-50 px-2.5 py-0.5 text-xs font-semibold text-amber-700">
-        출원 예정
-      </span>
     </motion.div>
   );
 }

@@ -6,7 +6,6 @@ export const COMPANY = {
   ceo: "서동구",
   bizNo: "728-81-04234",
   email: "aitoolz@kakao.com",
-  phone: "02-1234-5678", // 플레이스홀더 — 추후 확정
   zip: "10049",
   address: "경기도 김포시 김포한강1로 51번길 18 (장기동, 신우프라자)",
   domain: "aitoolz.kr",

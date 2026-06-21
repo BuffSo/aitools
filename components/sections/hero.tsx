@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion, type Variants } from "motion/react";
-import { ArrowRight, Download, TrendingUp, Zap } from "lucide-react";
+import { ArrowRight, ChevronDown, Download, TrendingUp, Zap } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
@@ -20,7 +20,7 @@ const item: Variants = {
 
 export function Hero() {
   return (
-    <section className="relative isolate flex items-center overflow-hidden bg-gradient-to-b from-white via-brand-bg/50 to-white pt-28 pb-20 lg:min-h-[90svh] lg:pt-32">
+    <section className="relative isolate flex min-h-[100svh] items-center overflow-hidden bg-gradient-to-b from-white via-brand-bg/50 to-white pt-28 pb-20 lg:pt-32">
       {/* 배경 장식 */}
       <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute inset-0 [background-image:linear-gradient(to_right,rgba(23,73,166,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(23,73,166,0.05)_1px,transparent_1px)] [background-size:3rem_3rem] [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)]" />
@@ -112,6 +112,19 @@ export function Hero() {
           <HeroVisual />
         </motion.div>
       </div>
+
+      {/* 스크롤 인디케이터 */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.2, duration: 0.6 }}
+        className="absolute bottom-6 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-1 text-brand-ink/40 sm:flex"
+      >
+        <span className="text-[0.65rem] font-medium tracking-[0.2em] uppercase">
+          Scroll
+        </span>
+        <ChevronDown className="size-5 animate-bounce" aria-hidden />
+      </motion.div>
     </section>
   );
 }

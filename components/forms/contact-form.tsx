@@ -18,6 +18,8 @@ export function ContactForm() {
   const [values, setValues] = useState<ContactFormValues>(EMPTY_CONTACT_FORM);
   const [errors, setErrors] = useState<ContactFormErrors>({});
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [sendError, setSendError] = useState<string | null>(null);
 
   function update<K extends keyof ContactFormValues>(
     key: K,
@@ -27,12 +29,27 @@ export function ContactForm() {
     if (errors[key]) setErrors((e) => ({ ...e, [key]: undefined }));
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     const next = validateContactForm(values);
     setErrors(next);
-    // TODO(S9): 실제 전송 연동 (이메일/DB). 현재는 클라이언트 검증 + 성공 UI 만.
-    if (Object.keys(next).length === 0) setSubmitted(true);
+    if (Object.keys(next).length > 0) return;
+
+    setSending(true);
+    setSendError(null);
+    try {
+      const res = await fetch("/api/inquiry", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ kind: "contact", ...values }),
+      });
+      if (!res.ok) throw new Error("send failed");
+      setSubmitted(true);
+    } catch {
+      setSendError("전송에 실패했습니다. 잠시 후 다시 시도해 주세요.");
+    } finally {
+      setSending(false);
+    }
   }
 
   if (submitted) {
@@ -143,12 +160,22 @@ export function ContactForm() {
         </div>
       </div>
 
+      {sendError && (
+        <p role="alert" className="mt-4 text-sm text-red-600">
+          {sendError}
+        </p>
+      )}
+
       <button
         type="submit"
-        className={cn(buttonVariants(), "mt-6 h-12 w-full gap-2 text-base")}
+        disabled={sending}
+        className={cn(
+          buttonVariants(),
+          "mt-6 h-12 w-full gap-2 text-base disabled:opacity-60",
+        )}
       >
-        문의 보내기
-        <ArrowRight className="size-4" />
+        {sending ? "전송 중…" : "문의 보내기"}
+        {!sending && <ArrowRight className="size-4" />}
       </button>
     </form>
   );

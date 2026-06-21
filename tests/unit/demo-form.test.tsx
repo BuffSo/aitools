@@ -1,4 +1,4 @@
-import { describe, it, expect } from "vitest";
+import { describe, it, expect, vi, beforeEach } from "vitest";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { validateDemoForm, EMPTY_DEMO_FORM } from "@/lib/demo-form";
@@ -34,23 +34,55 @@ describe("validateDemoForm", () => {
 });
 
 describe("DemoForm", () => {
-  it("blocks submit and shows errors when empty", async () => {
+  beforeEach(() => {
+    vi.stubGlobal(
+      "fetch",
+      vi.fn().mockResolvedValue({ ok: true, json: async () => ({ success: true }) }),
+    );
+  });
+
+  it("blocks submit (no network call) and shows errors when empty", async () => {
     const user = userEvent.setup();
     render(<DemoForm />);
     await user.click(screen.getByRole("button", { name: /데모 신청하기/ }));
     expect(screen.getByText("회사명을 입력해 주세요.")).toBeInTheDocument();
+    expect(global.fetch).not.toHaveBeenCalled();
     expect(
       screen.queryByText(/신청이 접수되었습니다/),
     ).not.toBeInTheDocument();
   });
 
-  it("shows success after submitting valid input", async () => {
+  it("posts to the inquiry API and shows success on valid input", async () => {
     const user = userEvent.setup();
     render(<DemoForm />);
     await user.type(screen.getByLabelText(/회사명/), "에이아이툴즈");
     await user.type(screen.getByLabelText(/담당자/), "서동구");
     await user.type(screen.getByLabelText(/이메일/), "a@b.com");
     await user.click(screen.getByRole("button", { name: /데모 신청하기/ }));
+
     expect(await screen.findByText(/신청이 접수되었습니다/)).toBeInTheDocument();
+    expect(global.fetch).toHaveBeenCalledWith(
+      "/api/inquiry",
+      expect.objectContaining({ method: "POST" }),
+    );
+    const sentBody = JSON.parse(
+      (global.fetch as ReturnType<typeof vi.fn>).mock.calls[0][1].body,
+    );
+    expect(sentBody).toMatchObject({ kind: "demo", email: "a@b.com" });
+  });
+
+  it("shows an error message when the send fails", async () => {
+    vi.stubGlobal("fetch", vi.fn().mockResolvedValue({ ok: false }));
+    const user = userEvent.setup();
+    render(<DemoForm />);
+    await user.type(screen.getByLabelText(/회사명/), "에이아이툴즈");
+    await user.type(screen.getByLabelText(/담당자/), "서동구");
+    await user.type(screen.getByLabelText(/이메일/), "a@b.com");
+    await user.click(screen.getByRole("button", { name: /데모 신청하기/ }));
+
+    expect(await screen.findByRole("alert")).toHaveTextContent(/전송에 실패/);
+    expect(
+      screen.queryByText(/신청이 접수되었습니다/),
+    ).not.toBeInTheDocument();
   });
 });

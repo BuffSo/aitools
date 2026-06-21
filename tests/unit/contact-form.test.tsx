@@ -1,4 +1,4 @@
-import { describe, it, expect, vi } from "vitest";
+import { describe, it, expect, vi, beforeEach } from "vitest";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import {
@@ -52,26 +52,54 @@ describe("validateContactForm", () => {
 });
 
 describe("ContactForm", () => {
-  it("blocks submit and shows errors when empty", async () => {
+  beforeEach(() => {
+    vi.stubGlobal(
+      "fetch",
+      vi.fn().mockResolvedValue({ ok: true, json: async () => ({ success: true }) }),
+    );
+  });
+
+  it("blocks submit (no network call) and shows errors when empty", async () => {
     const user = userEvent.setup();
     render(<ContactForm />);
     await user.click(screen.getByRole("button", { name: /문의 보내기/ }));
     expect(screen.getByText("담당자명을 입력해 주세요.")).toBeInTheDocument();
     expect(screen.getByText("문의 내용을 입력해 주세요.")).toBeInTheDocument();
+    expect(global.fetch).not.toHaveBeenCalled();
     expect(
       screen.queryByText(/문의가 접수되었습니다/),
     ).not.toBeInTheDocument();
   });
 
-  it("shows success after submitting valid input", async () => {
+  it("posts to the inquiry API and shows success on valid input", async () => {
     const user = userEvent.setup();
     render(<ContactForm />);
     await user.type(screen.getByLabelText(/담당자명/), "서동구");
     await user.type(screen.getByLabelText(/이메일/), "a@b.com");
     await user.type(screen.getByLabelText(/문의 내용/), "서비스 도입 문의 드립니다.");
     await user.click(screen.getByRole("button", { name: /문의 보내기/ }));
+
     expect(
       await screen.findByText(/문의가 접수되었습니다/),
     ).toBeInTheDocument();
+    const sentBody = JSON.parse(
+      (global.fetch as ReturnType<typeof vi.fn>).mock.calls[0][1].body,
+    );
+    expect(sentBody).toMatchObject({ kind: "contact", email: "a@b.com" });
+  });
+
+  it("shows an error message when the send fails", async () => {
+    vi.stubGlobal("fetch", vi.fn().mockResolvedValue({ ok: false }));
+    const user = userEvent.setup();
+    render(<ContactForm />);
+    await user.type(screen.getByLabelText(/담당자명/), "서동구");
+    await user.type(screen.getByLabelText(/이메일/), "a@b.com");
+    await user.type(screen.getByLabelText(/문의 내용/), "문의 드립니다.");
+    await user.click(screen.getByRole("button", { name: /문의 보내기/ }));
+
+    expect(await screen.findByRole("alert")).toHaveTextContent(/전송에 실패/);
+    expect(
+      screen.queryByText(/문의가 접수되었습니다/),
+    ).not.toBeInTheDocument();
   });
 });

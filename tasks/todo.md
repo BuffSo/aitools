@@ -133,4 +133,7 @@
 - [~] S7. `/login` 로그인 — **제거** (2026-06-21, 헤더에서 삭제)
 - [x] S8. `/privacy`·`/terms` — 개인정보처리방침(12조)·이용약관(11조) 표준 양식 + 실제 회사정보 ✅
   - 공통 LegalDocument 렌더러. **법무 검토 권장**(초안). 검증: axe A·AA 0, 콘솔 0, vitest 3건, e2e. **→ 깨진 링크 0개 달성.**
-- [ ] S9. 데모 폼 백엔드 연동 (Formspree 또는 Resend → aitoolz@kakao.com) — **맨 마지막**
+- [x] S9. 폼 백엔드 — Resend 메일 전송 (데모 폼 + 문의 폼 공용 `POST /api/inquiry`) ✅
+  - brainhouse 패턴 적용. `lib/email.ts`(HTML 메일·키 지연생성) + 서버측 재검증. 폼에 전송 중·에러 상태 추가.
+  - 환경변수 `RESEND_API_KEY`·`INQUIRY_TO_EMAIL`·`INQUIRY_FROM_EMAIL` (`.env.example`). 검증: 단위 44, e2e 7, 라우트 400/502 graceful.
+  - **사용자 설정 필요**: Vercel 환경변수에 `RESEND_API_KEY` 등록(+ 수신함을 aitoolz@kakao.com으로 받으려면 Resend에서 도메인 인증 또는 수신 메일 확인).

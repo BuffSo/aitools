@@ -133,6 +133,8 @@
   }
   body {
     @apply bg-background text-foreground;
+    /* 한국어 어절이 중간에서 끊기지 않게 (고아 음절 방지) */
+    word-break: keep-all;
   }
   html {
     @apply font-sans scroll-smooth;

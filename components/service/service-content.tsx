@@ -119,9 +119,15 @@ export function ServiceContent() {
                 transition={{ delay: i * 0.06 }}
                 className="rounded-2xl border border-border bg-white p-6 shadow-sm transition-all hover:-translate-y-1 hover:border-brand/40 hover:shadow-md"
               >
-                <span className="grid size-12 place-items-center rounded-xl bg-brand/10 text-brand">
-                  <w.Icon className="size-6" aria-hidden />
-                </span>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={w.iconSrc}
+                  alt=""
+                  aria-hidden
+                  width={48}
+                  height={48}
+                  className="size-12"
+                />
                 <h3 className="mt-5 text-lg font-bold text-brand-ink">
                   {w.title}
                 </h3>

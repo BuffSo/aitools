@@ -1,0 +1,28 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="120" y2="120" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1749a6"/>
+      <stop offset="1" stop-color="#2d7dd2"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 배지 -->
+  <rect width="120" height="120" rx="30" fill="url(#bgGrad)"/>
+
+  <!-- 나침반 (데이터가 가리키는 방향 = 데이터 기반 의사결정) -->
+  <circle cx="60" cy="58" r="30" fill="#ffffff" fill-opacity="0.12" stroke="#ffffff" stroke-width="5"/>
+
+  <!-- 방위 눈금 -->
+  <g stroke="#ffffff" stroke-width="4" stroke-linecap="round">
+    <path d="M60 31v7"/>
+    <path d="M60 78v7"/>
+    <path d="M33 58h7"/>
+    <path d="M80 58h7"/>
+  </g>
+
+  <!-- 바늘: 데이터가 가리키는 방향 (accent) -->
+  <path d="M79 39 64 62 56 54z" fill="#9be8ff"/>
+  <!-- 반대쪽 바늘 (흰) -->
+  <path d="M41 77 56 54 64 62z" fill="#ffffff" fill-opacity="0.85"/>
+  <circle cx="60" cy="58" r="4.5" fill="#ffffff"/>
+</svg>

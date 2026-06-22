@@ -4,9 +4,6 @@ import {
   TrendingUp,
   Coins,
   ClipboardList,
-  Sparkles,
-  Target,
-  ShieldCheck,
   type LucideIcon,
 } from "lucide-react";
 
@@ -65,7 +62,7 @@ export const SERVICE_STEPS: ServiceStep[] = [
 export interface ServiceWhy {
   title: string;
   desc: string;
-  Icon: LucideIcon;
+  iconSrc: string; // /public/icons 의 커스텀 SVG 배지
 }
 
 // 왜 AI 광고 운영 자동화 플랫폼인가?
@@ -73,22 +70,22 @@ export const SERVICE_WHY: ServiceWhy[] = [
   {
     title: "단순 리포트가 아닙니다",
     desc: "기존 도구가 ‘무슨 일이 있었는지’ 알려준다면, 우리는 ‘무엇을 해야 하는지’ 알려줍니다.",
-    Icon: Sparkles,
+    iconSrc: "/icons/why-actionable.svg",
   },
   {
     title: "미래 성과를 예측합니다",
     desc: "과거 분석에 그치지 않고, AI가 향후 광고 성과를 예측하여 최적의 운영 방향을 제안합니다.",
-    Icon: TrendingUp,
+    iconSrc: "/icons/why-forecast.svg",
   },
   {
     title: "광고비를 더 효율적으로",
     desc: "가장 높은 성과가 기대되는 채널에 광고 예산을 자동으로 배분하도록 지원합니다.",
-    Icon: Target,
+    iconSrc: "/icons/why-efficiency.svg",
   },
   {
     title: "데이터 기반 의사결정",
     desc: "경험과 직관이 아닌, 데이터와 AI 분석을 기반으로 광고 전략을 수립합니다.",
-    Icon: ShieldCheck,
+    iconSrc: "/icons/why-decision.svg",
   },
 ];
 

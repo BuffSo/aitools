@@ -1,0 +1,23 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="120" y2="120" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1749a6"/>
+      <stop offset="1" stop-color="#2d7dd2"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 배지 -->
+  <rect width="120" height="120" rx="30" fill="url(#bgGrad)"/>
+
+  <!-- 예산 배분 파이 -->
+  <circle cx="60" cy="58" r="25" fill="#ffffff" fill-opacity="0.14" stroke="#ffffff" stroke-width="5"/>
+
+  <!-- 최고 성과 채널 비중 (accent) -->
+  <path d="M60 58V33a25 25 0 0 1 21.65 37.5z" fill="#9be8ff" fill-opacity="0.92"/>
+
+  <!-- 채널 구분선 -->
+  <g stroke="#ffffff" stroke-width="4" stroke-linecap="round">
+    <path d="M60 58 38.35 70.5"/>
+    <path d="M60 58 38.35 45.5"/>
+  </g>
+</svg>

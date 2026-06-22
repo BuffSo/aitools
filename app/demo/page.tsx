@@ -3,6 +3,7 @@ import { DemoForm } from "@/components/forms/demo-form";
 
 export const metadata: Metadata = {
   title: "데모 신청",
+  alternates: { canonical: "/demo" },
   description:
     "AI TOOLS 광고 운영 자동화 플랫폼 데모를 신청하세요. 담당자가 빠르게 연락드립니다.",
 };

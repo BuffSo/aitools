@@ -4,6 +4,7 @@ import { ContactContent } from "@/components/contact/contact-content";
 
 export const metadata: Metadata = {
   title: "문의하기",
+  alternates: { canonical: "/contact" },
   description:
     "AI TOOLS 서비스 도입·제휴·기타 문의를 남겨주세요. 담당자가 빠르게 연락드립니다.",
 };

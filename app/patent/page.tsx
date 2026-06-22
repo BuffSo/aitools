@@ -4,6 +4,7 @@ import { PatentContent } from "@/components/patent/patent-content";
 
 export const metadata: Metadata = {
   title: "특허 / 기술",
+  alternates: { canonical: "/patent" },
   description:
     "AI TOOLS는 멀티채널 입찰 최적화, 생성형 AI 광고 소재, 타겟 오디언스 확장, 성과 기반 수익 정산, 멀티플랫폼 AI 에이전트 등 광고 운영 자동화 핵심 기술 5건을 특허 출원했습니다.",
 };

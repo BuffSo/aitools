@@ -4,6 +4,7 @@ import { ServiceContent } from "@/components/service/service-content";
 
 export const metadata: Metadata = {
   title: "서비스",
+  alternates: { canonical: "/service" },
   description:
     "광고 데이터를 업로드하면 AI가 성과를 분석하고 예산 최적화·성과 예측·광고 운영 계획까지 자동으로 생성합니다. AI 광고 운영 자동화 플랫폼의 작동 방식과 기대효과를 확인하세요.",
 };

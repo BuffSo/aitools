@@ -4,6 +4,7 @@ import { AboutContent } from "@/components/about/about-content";
 
 export const metadata: Metadata = {
   title: "회사소개",
+  alternates: { canonical: "/about" },
   description:
     "에이아이툴즈(AI TOOLS)는 인공지능으로 기업의 마케팅 의사결정을 자동화하는 AI 광고 운영 솔루션 기업입니다. 비전·미션·핵심가치와 회사 개요를 소개합니다.",
 };

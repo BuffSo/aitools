@@ -5,6 +5,7 @@ import { TERMS_DOC } from "@/content/legal";
 
 export const metadata: Metadata = {
   title: "이용약관",
+  alternates: { canonical: "/terms" },
   description:
     "AI TOOLS(에이아이툴즈) 서비스 이용약관입니다. 서비스 이용 조건과 회사·이용자의 권리·의무를 안내합니다.",
 };

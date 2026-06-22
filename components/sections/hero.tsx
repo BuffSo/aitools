@@ -167,6 +167,11 @@ function HeroVisual() {
             <stop offset="0%" stopColor="#2d7dd2" />
             <stop offset="100%" stopColor="#00b4d8" />
           </linearGradient>
+          <radialGradient id="nodeFill" cx="50%" cy="38%" r="65%">
+            <stop offset="0%" stopColor="#a5f3fc" />
+            <stop offset="55%" stopColor="#00b4d8" />
+            <stop offset="100%" stopColor="#2d7dd2" />
+          </radialGradient>
         </defs>
         {/* 외곽 헥사곤 */}
         <motion.path
@@ -182,30 +187,68 @@ function HeroVisual() {
         {/* 중심 → 노드 연결선 */}
         {NODES.map(([x, y], i) => (
           <motion.line
-            key={i}
+            key={`line-${i}`}
             x1="100"
             y1="100"
             x2={x}
             y2={y}
             stroke="url(#hexStroke)"
             strokeWidth="1.5"
-            strokeOpacity="0.5"
+            strokeOpacity="0.3"
             initial={{ pathLength: 0 }}
             animate={{ pathLength: 1 }}
             transition={{ duration: 0.6, delay: 0.9 + i * 0.08 }}
           />
         ))}
-        {/* 노드 */}
+        {/* 데이터 흐름 펄스 (노드 → 중심으로 흡수) */}
         {NODES.map(([x, y], i) => (
           <motion.circle
-            key={i}
+            key={`flow-${i}`}
+            r="2.6"
+            fill="#67e8f9"
+            initial={{ cx: x, cy: y, opacity: 0 }}
+            animate={{ cx: [x, 100], cy: [y, 100], opacity: [0, 1, 0] }}
+            transition={{
+              duration: 1.7,
+              repeat: Infinity,
+              ease: "easeIn",
+              delay: 1.6 + i * 0.28,
+            }}
+          />
+        ))}
+        {/* 노드 확산 헤일로 링 */}
+        {NODES.map(([x, y], i) => (
+          <motion.circle
+            key={`halo-${i}`}
             cx={x}
             cy={y}
-            r="4.5"
-            fill="#00b4d8"
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            transition={{ duration: 0.3, delay: 1.1 + i * 0.08 }}
+            fill="none"
+            stroke="#00b4d8"
+            strokeWidth="1.2"
+            initial={{ r: 4.5, opacity: 0 }}
+            animate={{ r: [4.5, 12], opacity: [0.55, 0] }}
+            transition={{
+              duration: 2.2,
+              repeat: Infinity,
+              ease: "easeOut",
+              delay: 1.3 + i * 0.22,
+            }}
+          />
+        ))}
+        {/* 노드 (입체 그라데이션 + 호흡 펄스) */}
+        {NODES.map(([x, y], i) => (
+          <motion.circle
+            key={`node-${i}`}
+            cx={x}
+            cy={y}
+            fill="url(#nodeFill)"
+            animate={{ r: [4.4, 5.4, 4.4], opacity: [0.85, 1, 0.85] }}
+            transition={{
+              duration: 2.6,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: i * 0.22,
+            }}
           />
         ))}
       </svg>

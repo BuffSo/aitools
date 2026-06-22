@@ -9,7 +9,7 @@
       <stop offset="0%" stop-color="#00b4d8"/>
       <stop offset="100%" stop-color="#2d7dd2"/>
     </linearGradient>
-    <radialGradient id="glow" cx="50%" cy="44%" r="62%">
+    <radialGradient id="glow" cx="50%" cy="46%" r="60%">
       <stop offset="0%" stop-color="rgba(0,180,216,0.16)"/>
       <stop offset="100%" stop-color="rgba(0,180,216,0)"/>
     </radialGradient>
@@ -19,19 +19,12 @@
   <rect width="1200" height="630" fill="url(#bg)"/>
   <rect width="1200" height="630" fill="url(#glow)"/>
 
-  <!-- 좌상단 로고(흰색 가로형)는 generate 스크립트에서 left=64, top=68, 폭 300으로 합성 -->
+  <!-- 로고(흰색 가로형)는 generate 스크립트에서 상단 중앙(폭 360, top=96)에 합성 -->
 
-  <!-- 우상단 배지 -->
-  <rect x="900" y="79" width="236" height="42" rx="21" fill="rgba(0,180,216,0.13)" stroke="rgba(0,180,216,0.45)" stroke-width="1"/>
-  <text x="1018" y="106" text-anchor="middle" font-family="'Apple SD Gothic Neo', Pretendard, sans-serif" font-size="19" letter-spacing="3" font-weight="600" fill="#22d3ee">AI MARKETING OS</text>
+  <!-- 헤드라인 (썸네일에서도 읽히도록 크게, 가운데 정렬) -->
+  <text x="600" y="356" text-anchor="middle" font-family="'Apple SD Gothic Neo', Pretendard, sans-serif" font-size="72" font-weight="800" fill="#ffffff">AI가 광고 성과를 분석하고</text>
+  <text x="600" y="448" text-anchor="middle" font-family="'Apple SD Gothic Neo', Pretendard, sans-serif" font-size="72" font-weight="800" fill="url(#cyan)">스스로 의사결정합니다</text>
 
-  <!-- 중앙 헤드라인 (가운데 정렬) -->
-  <text x="600" y="318" text-anchor="middle" font-family="'Apple SD Gothic Neo', Pretendard, sans-serif" font-size="68" font-weight="800" fill="#ffffff">AI가 광고 성과를 분석하고</text>
-  <text x="600" y="406" text-anchor="middle" font-family="'Apple SD Gothic Neo', Pretendard, sans-serif" font-size="68" font-weight="800" fill="url(#cyan)">스스로 의사결정합니다</text>
-
-  <!-- 좌하단 키워드 -->
-  <text x="64" y="558" text-anchor="start" font-family="'Apple SD Gothic Neo', Pretendard, sans-serif" font-size="25" font-weight="500" fill="rgba(255,255,255,0.70)">성과 분석 · 예산 최적화 · 광고 운영 자동화</text>
-
-  <!-- 우하단 도메인 -->
-  <text x="1136" y="558" text-anchor="end" font-family="'Apple SD Gothic Neo', Pretendard, sans-serif" font-size="25" font-weight="600" fill="rgba(34,211,238,0.9)">aitoolz.kr</text>
+  <!-- 태그라인 (가운데 정렬, 한 줄) -->
+  <text x="600" y="540" text-anchor="middle" font-family="'Apple SD Gothic Neo', Pretendard, sans-serif" font-size="34" font-weight="500" fill="rgba(255,255,255,0.80)">AI 광고 운영 자동화 솔루션</text>
 </svg>

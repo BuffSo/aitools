@@ -12,11 +12,11 @@ const svgPath = join(__dirname, "og-image.svg");
 const logoPath = join(__dirname, "..", "public", "logo-horizontal.png");
 const outputPath = join(__dirname, "..", "app", "opengraph-image.png");
 
-// 로고: 원본 4170×900(≈4.63:1) → 좌상단 배치 (배지와 같은 높이대)
-const LOGO_W = 300;
-const LOGO_H = Math.round((LOGO_W * 900) / 4170); // ≈ 65
-const LOGO_X = 64;
-const LOGO_Y = 68;
+// 로고: 원본 4170×900(≈4.63:1) → 상단 중앙 배치
+const LOGO_W = 360;
+const LOGO_H = Math.round((LOGO_W * 900) / 4170); // ≈ 78
+const LOGO_X = Math.round((1200 - LOGO_W) / 2); // 420
+const LOGO_Y = 96;
 
 const logo = await sharp(logoPath).resize(LOGO_W, LOGO_H).png().toBuffer();
 

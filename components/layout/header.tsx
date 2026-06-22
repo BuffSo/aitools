@@ -58,26 +58,26 @@ export function Header() {
       >
         본문 바로가기
       </a>
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" aria-label="AI TOOLS 홈" className="shrink-0">
           <Image
             src="/logo-horizontal-dark.png"
             alt="AI TOOLS"
-            width={132}
-            height={28}
+            width={167}
+            height={36}
             priority
-            className="h-7 w-auto"
+            className="h-9 w-auto"
           />
         </Link>
 
         {/* 데스크톱 메뉴 */}
-        <nav aria-label="주 메뉴" className="hidden items-center gap-8 md:flex">
+        <nav aria-label="주 메뉴" className="hidden items-center gap-9 md:flex">
           {NAV_ITEMS.map((item) => (
             <Link
               key={item.href}
               href={item.href}
               prefetch={false}
-              className="text-sm font-medium text-brand-ink/80 transition-colors hover:text-brand"
+              className="text-base font-medium text-brand-ink/80 transition-colors hover:text-brand"
             >
               {item.label}
             </Link>
@@ -86,7 +86,7 @@ export function Header() {
 
         {/* 데스크톱 우측 CTA */}
         <div className="hidden items-center gap-4 md:flex">
-          <Link href="/demo" className={cn(buttonVariants(), "h-9 px-4")}>
+          <Link href="/demo" className={cn(buttonVariants(), "h-10 px-5 text-base")}>
             데모 신청
           </Link>
         </div>

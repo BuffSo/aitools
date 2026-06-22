@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import Image from "next/image";
 import Link from "next/link";
 import { ChevronRight, Menu, X } from "lucide-react";
@@ -12,8 +13,12 @@ import { NAV_ITEMS } from "@/content/nav";
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const hamburgerRef = useRef<HTMLButtonElement>(null);
   const closeBtnRef = useRef<HTMLButtonElement>(null);
+
+  // 포털은 클라이언트 마운트 이후에만 렌더 (SSR 안전)
+  useEffect(() => setMounted(true), []);
 
   function closeMobile() {
     setMobileOpen(false);
@@ -105,9 +110,11 @@ export function Header() {
         </button>
       </div>
 
-      {/* 모바일 드로어 */}
-      {mobileOpen && (
-        <div className="fixed inset-0 z-50 md:hidden">
+      {/* 모바일 드로어 — body로 포털 (헤더의 backdrop-filter containing block 회피) */}
+      {mounted &&
+        mobileOpen &&
+        createPortal(
+          <div className="fixed inset-0 z-[60] md:hidden">
           <div
             className="absolute inset-0 bg-black/40"
             onClick={closeMobile}
@@ -173,8 +180,9 @@ export function Header() {
               </Link>
             </div>
           </div>
-        </div>
-      )}
+          </div>,
+          document.body,
+        )}
     </header>
   );
 }

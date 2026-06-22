@@ -1,0 +1,32 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="120" y2="120" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2d7dd2"/>
+      <stop offset="1" stop-color="#00b4d8"/>
+    </linearGradient>
+  </defs>
+  <rect width="120" height="120" rx="30" fill="url(#bgGrad)"/>
+
+  <!-- 뇌 외곽 (양 반구 + 윗주름) -->
+  <path d="M34 58C32 49 38 42 47 43a7 7 0 0 1 13 -1 7 7 0 0 1 13 1
+           C82 42 88 49 86 58 88 67 82 75 73 76 70 81 64 82 60 79
+           56 82 50 81 47 76 38 75 32 67 34 58z"
+        fill="#ffffff" fill-opacity="0.14" stroke="#ffffff" stroke-width="5" stroke-linejoin="round"/>
+
+  <!-- 중앙 분할 + 주름 -->
+  <g stroke="#ffffff" stroke-opacity="0.6" stroke-width="3.4" stroke-linecap="round" fill="none">
+    <path d="M60 43V78"/>
+    <path d="M49 53c-5 3 -5 9 1 12"/>
+    <path d="M71 53c5 3 5 9 -1 12"/>
+  </g>
+
+  <!-- 뉴럴 회로 분기 (AI, accent) -->
+  <g stroke="#9be8ff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <path d="M60 60 68 64 68 72"/>
+  </g>
+  <g fill="#9be8ff">
+    <circle cx="60" cy="60" r="3.1"/>
+    <circle cx="68" cy="64" r="3.1"/>
+    <circle cx="68" cy="72" r="3.1"/>
+  </g>
+</svg>

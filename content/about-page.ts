@@ -1,11 +1,3 @@
-import {
-  Workflow,
-  Gauge,
-  BrainCircuit,
-  Expand,
-  type LucideIcon,
-} from "lucide-react";
-
 // ref/사업기획서 기반 — /about 회사소개
 
 export const ABOUT_VISION = "인공지능으로 기업의 마케팅 의사결정을 자동화하다";
@@ -16,7 +8,7 @@ export interface CoreValue {
   en: string;
   ko: string;
   desc: string;
-  Icon: LucideIcon;
+  iconSrc: string; // /public/icons 의 커스텀 SVG 배지
 }
 
 export const CORE_VALUES: CoreValue[] = [
@@ -24,25 +16,25 @@ export const CORE_VALUES: CoreValue[] = [
     en: "Automation",
     ko: "자동화",
     desc: "반복적인 광고 운영 업무를 100% 자동화합니다.",
-    Icon: Workflow,
+    iconSrc: "/icons/value-automation.svg",
   },
   {
     en: "Optimization",
     ko: "최적화",
     desc: "ROAS·CPA·CTR을 실시간으로 분석해 최적화합니다.",
-    Icon: Gauge,
+    iconSrc: "/icons/value-optimization.svg",
   },
   {
     en: "Intelligence",
     ko: "지능화",
     desc: "경험과 직관이 아닌 데이터 기반 AI 의사결정을 지향합니다.",
-    Icon: BrainCircuit,
+    iconSrc: "/icons/value-intelligence.svg",
   },
   {
     en: "Scalability",
     ko: "확장성",
     desc: "소상공인부터 대기업까지 유연하게 확장합니다.",
-    Icon: Expand,
+    iconSrc: "/icons/value-scalability.svg",
   },
 ];
 

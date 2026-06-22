@@ -1,0 +1,20 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="120" y2="120" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1749a6"/>
+      <stop offset="1" stop-color="#2d7dd2"/>
+    </linearGradient>
+  </defs>
+  <rect width="120" height="120" rx="30" fill="url(#bgGrad)"/>
+
+  <!-- 자동 순환 화살표 (반복 자동화) -->
+  <g stroke="#ffffff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <path d="M39.3 49.5A22 22 0 0 1 80.7 49.5"/>
+    <path d="M73.7 47.6 80.7 49.5 82.2 42.6"/>
+    <path d="M80.7 64.5A22 22 0 0 1 39.3 64.5"/>
+    <path d="M46.3 66.4 39.3 64.5 37.8 71.4"/>
+  </g>
+
+  <!-- 중심 (accent) -->
+  <circle cx="60" cy="57" r="5" fill="#9be8ff"/>
+</svg>

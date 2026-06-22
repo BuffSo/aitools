@@ -69,9 +69,15 @@ export function AboutContent() {
                 transition={{ delay: i * 0.06 }}
                 className="rounded-2xl border border-border bg-white p-6 text-center shadow-sm transition-all hover:-translate-y-1 hover:border-brand/40 hover:shadow-md"
               >
-                <span className="mx-auto grid size-12 place-items-center rounded-xl bg-brand/10 text-brand">
-                  <v.Icon className="size-6" aria-hidden />
-                </span>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={v.iconSrc}
+                  alt=""
+                  aria-hidden
+                  width={48}
+                  height={48}
+                  className="mx-auto size-12"
+                />
                 <h3 className="mt-5 text-lg font-bold text-brand-ink">{v.ko}</h3>
                 <p className="text-xs font-semibold tracking-[0.15em] text-brand uppercase">
                   {v.en}

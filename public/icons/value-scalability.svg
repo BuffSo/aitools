@@ -1,0 +1,28 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="120" y2="120" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1749a6"/>
+      <stop offset="1" stop-color="#2d7dd2"/>
+    </linearGradient>
+  </defs>
+  <rect width="120" height="120" rx="30" fill="url(#bgGrad)"/>
+
+  <!-- 중심 -->
+  <rect x="54" y="52" width="12" height="12" rx="2.5" fill="#ffffff" fill-opacity="0.2" stroke="#ffffff" stroke-width="4"/>
+
+  <!-- 확장 화살표 (NE = accent) -->
+  <g stroke="#9be8ff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <path d="M68 50 83 35"/>
+    <path d="M75.5 35H83V42.5"/>
+  </g>
+
+  <!-- 나머지 방향 (흰) -->
+  <g stroke="#ffffff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <path d="M52 50 37 35"/>
+    <path d="M44.5 35H37V42.5"/>
+    <path d="M68 66 83 81"/>
+    <path d="M75.5 81H83V73.5"/>
+    <path d="M52 66 37 81"/>
+    <path d="M44.5 81H37V73.5"/>
+  </g>
+</svg>

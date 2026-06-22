@@ -110,7 +110,7 @@ export function Header() {
           mobileOpen은 클릭 후에만 true이므로 SSR 시 createPortal 미호출 → mounted 가드 불필요 */}
       {mobileOpen &&
         createPortal(
-          <div className="fixed inset-0 z-[60] md:hidden">
+          <div className="fixed inset-0 z-60 md:hidden">
           <div
             className="absolute inset-0 bg-black/40"
             onClick={closeMobile}

@@ -1,0 +1,26 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="120" y2="120" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1749a6"/>
+      <stop offset="1" stop-color="#00b4d8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 배지 -->
+  <rect width="120" height="120" rx="30" fill="url(#bgGrad)"/>
+
+  <!-- 좌표축 -->
+  <path d="M36 32v52h52" stroke="#ffffff" stroke-opacity="0.4" stroke-width="5"
+        stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+
+  <!-- 실측 추세선 (AI 분석) -->
+  <path d="M44 76l13-15 11 8 12-16" stroke="#ffffff" stroke-width="6"
+        stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+
+  <!-- 예측 구간 (점선) -->
+  <path d="M80 53l6-9" stroke="#9be8ff" stroke-width="6"
+        stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1 12" fill="none"/>
+
+  <!-- AI 예측 스파크 -->
+  <path d="M90 31.5l2.4 6.1L98.5 40l-6.1 2.4L90 48.5l-2.4-6.1L81.5 40l6.1-2L90 31.5z" fill="#9be8ff"/>
+</svg>

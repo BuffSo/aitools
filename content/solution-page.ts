@@ -3,9 +3,6 @@ import {
   Stethoscope,
   GraduationCap,
   Store,
-  Network,
-  TrendingUp,
-  Zap,
   type LucideIcon,
 } from "lucide-react";
 
@@ -69,7 +66,7 @@ export const SOLUTION_INDUSTRIES: SolutionIndustry[] = [
 export interface SolutionPillar {
   title: string;
   desc: string;
-  Icon: LucideIcon;
+  iconSrc: string; // /public/icons 의 커스텀 SVG 배지
 }
 
 // 모든 산업 솔루션의 공통 기반 (AdBrain 플랫폼)
@@ -77,16 +74,16 @@ export const SOLUTION_PILLARS: SolutionPillar[] = [
   {
     title: "멀티플랫폼 데이터 통합",
     desc: "Google·Meta·NAVER·kakao 광고 데이터를 한곳에서 통합 분석합니다.",
-    Icon: Network,
+    iconSrc: "/icons/platform.svg",
   },
   {
     title: "AI 분석 · 성과 예측",
     desc: "과거 데이터를 학습해 향후 광고 성과를 예측하고 운영 전략을 제안합니다.",
-    Icon: TrendingUp,
+    iconSrc: "/icons/forecast.svg",
   },
   {
     title: "자동 예산 최적화",
     desc: "성과가 높은 채널로 예산을 자동 배분하여 광고 효율을 끌어올립니다.",
-    Icon: Zap,
+    iconSrc: "/icons/budget.svg",
   },
 ];

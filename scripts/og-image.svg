@@ -1,0 +1,37 @@
+<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1749a6"/>
+      <stop offset="55%" stop-color="#16213e"/>
+      <stop offset="100%" stop-color="#0b1020"/>
+    </linearGradient>
+    <linearGradient id="cyan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00b4d8"/>
+      <stop offset="100%" stop-color="#2d7dd2"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="44%" r="62%">
+      <stop offset="0%" stop-color="rgba(0,180,216,0.16)"/>
+      <stop offset="100%" stop-color="rgba(0,180,216,0)"/>
+    </radialGradient>
+  </defs>
+
+  <!-- 배경 -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+
+  <!-- 좌상단 로고(흰색 가로형)는 generate 스크립트에서 left=64, top=68, 폭 300으로 합성 -->
+
+  <!-- 우상단 배지 -->
+  <rect x="900" y="79" width="236" height="42" rx="21" fill="rgba(0,180,216,0.13)" stroke="rgba(0,180,216,0.45)" stroke-width="1"/>
+  <text x="1018" y="106" text-anchor="middle" font-family="'Apple SD Gothic Neo', Pretendard, sans-serif" font-size="19" letter-spacing="3" font-weight="600" fill="#22d3ee">AI MARKETING OS</text>
+
+  <!-- 중앙 헤드라인 (가운데 정렬) -->
+  <text x="600" y="318" text-anchor="middle" font-family="'Apple SD Gothic Neo', Pretendard, sans-serif" font-size="68" font-weight="800" fill="#ffffff">AI가 광고 성과를 분석하고</text>
+  <text x="600" y="406" text-anchor="middle" font-family="'Apple SD Gothic Neo', Pretendard, sans-serif" font-size="68" font-weight="800" fill="url(#cyan)">스스로 의사결정합니다</text>
+
+  <!-- 좌하단 키워드 -->
+  <text x="64" y="558" text-anchor="start" font-family="'Apple SD Gothic Neo', Pretendard, sans-serif" font-size="25" font-weight="500" fill="rgba(255,255,255,0.70)">성과 분석 · 예산 최적화 · 광고 운영 자동화</text>
+
+  <!-- 우하단 도메인 -->
+  <text x="1136" y="558" text-anchor="end" font-family="'Apple SD Gothic Neo', Pretendard, sans-serif" font-size="25" font-weight="600" fill="rgba(34,211,238,0.9)">aitoolz.kr</text>
+</svg>

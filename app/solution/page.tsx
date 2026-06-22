@@ -4,6 +4,7 @@ import { SolutionContent } from "@/components/solution/solution-content";
 
 export const metadata: Metadata = {
   title: "솔루션",
+  alternates: { canonical: "/solution" },
   description:
     "쇼핑몰·병원·학원·프랜차이즈 등 업종별 특성에 맞춘 AI 광고 운영 솔루션. 멀티플랫폼 데이터 통합과 AI 성과 예측, 자동 예산 최적화를 한 번에.",
 };

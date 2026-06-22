@@ -5,6 +5,7 @@ import { PRIVACY_DOC } from "@/content/legal";
 
 export const metadata: Metadata = {
   title: "개인정보처리방침",
+  alternates: { canonical: "/privacy" },
   description:
     "AI TOOLS(에이아이툴즈) 웹사이트의 개인정보 수집·이용·보관·파기에 관한 처리방침입니다.",
 };

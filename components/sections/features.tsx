@@ -50,7 +50,7 @@ function FeatureCard({
   feature: ServiceFeature;
   index: number;
 }) {
-  const { Icon, name, desc } = feature;
+  const { iconSrc, name, desc } = feature;
   return (
     <motion.div
       variants={reveal}
@@ -60,9 +60,9 @@ function FeatureCard({
       transition={{ duration: 0.5, delay: index * 0.08, ease: "easeOut" }}
       className="flex h-full min-h-[12.5rem] flex-col rounded-2xl border border-border bg-white p-6 shadow-sm transition-colors hover:border-brand/40"
     >
-      <span className="grid size-12 place-items-center rounded-xl bg-brand/10 text-brand">
-        <Icon className="size-6" aria-hidden />
-      </span>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src={iconSrc} alt="" aria-hidden width={48} height={48} className="size-12" />
+
       <h3 className="mt-5 text-lg font-bold text-brand-ink">{name}</h3>
       <p className="mt-2 text-sm leading-relaxed text-brand-ink/70">{desc}</p>
     </motion.div>

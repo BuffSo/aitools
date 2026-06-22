@@ -1,0 +1,23 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="120" y2="120" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1749a6"/>
+      <stop offset="1" stop-color="#00b4d8"/>
+    </linearGradient>
+  </defs>
+  <rect width="120" height="120" rx="30" fill="url(#bgGrad)"/>
+
+  <!-- 영수증 (지그재그 하단) -->
+  <path d="M42 26h36v62l-6 4-6-4-6 4-6-4-6 4-6-4z"
+        fill="#ffffff" fill-opacity="0.14" stroke="#ffffff" stroke-width="5" stroke-linejoin="round"/>
+
+  <!-- 원화 표시 -->
+  <g stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M52 40l8 11 8-11"/>
+    <path d="M51 46h18"/>
+    <path d="M51 51h18"/>
+  </g>
+
+  <!-- 정산 완료 체크 (cyan) -->
+  <path d="M51 70l6 6 12-12" stroke="#9be8ff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>

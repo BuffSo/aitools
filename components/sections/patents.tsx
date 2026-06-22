@@ -64,7 +64,7 @@ export function Patents() {
 }
 
 function PatentCard({ patent, index }: { patent: Patent; index: number }) {
-  const { Icon, name } = patent;
+  const { iconSrc, name } = patent;
   return (
     <motion.div
       variants={reveal}
@@ -74,9 +74,9 @@ function PatentCard({ patent, index }: { patent: Patent; index: number }) {
       transition={{ duration: 0.45, delay: index * 0.08, ease: "easeOut" }}
       className="flex flex-col items-center rounded-2xl border border-border bg-white p-5 text-center shadow-sm transition-all hover:-translate-y-1 hover:border-brand/40 hover:shadow-md"
     >
-      <span className="grid size-14 place-items-center rounded-full bg-brand/10 text-brand">
-        <Icon className="size-7" aria-hidden />
-      </span>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src={iconSrc} alt="" aria-hidden width={56} height={56} className="size-14" />
+
       <h3 className="mt-4 text-sm font-bold leading-snug text-brand-ink">
         {name}
       </h3>

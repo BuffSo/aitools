@@ -1,0 +1,27 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="120" y2="120" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2d7dd2"/>
+      <stop offset="1" stop-color="#00b4d8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 배지 -->
+  <rect width="120" height="120" rx="30" fill="url(#bgGrad)"/>
+
+  <!-- 메가폰 (광고) -->
+  <g stroke="#ffffff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- 혼(나팔) -->
+    <path d="M34 52v16l34 14V38L34 52z" fill="#ffffff" fill-opacity="0.16"/>
+    <!-- 마우스피스 -->
+    <path d="M28 54v12a4 4 0 0 0 6 3.5V50.5A4 4 0 0 0 28 54z" fill="#ffffff" fill-opacity="0.16"/>
+    <!-- 손잡이 -->
+    <path d="M44 76v9a5 5 0 0 0 10 0v-5" fill="none"/>
+  </g>
+
+  <!-- 생성 스파크 (AI 자동 생성) -->
+  <g fill="#ffffff">
+    <path d="M86 42l2.4 6.1L94.5 50.5l-6.1 2.4L86 59l-2.4-6.1L77.5 50.5l6.1-2L86 42z"/>
+    <path d="M98 64l1.5 3.8 3.8 1.5-3.8 1.5L98 76l-1.5-3.8L92.7 70.8l3.8-1.5L98 64z" fill-opacity="0.9"/>
+  </g>
+</svg>

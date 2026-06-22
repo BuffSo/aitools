@@ -1,0 +1,29 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="120" y2="120" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1749a6"/>
+      <stop offset="1" stop-color="#2d7dd2"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 배지 -->
+  <rect width="120" height="120" rx="30" fill="url(#bgGrad)"/>
+
+  <!-- 쌓인 동전 (예산) -->
+  <g stroke="#ffffff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <!-- 아래 동전 -->
+    <path d="M24 70v10c0 5.5 10.7 10 24 10s24-4.5 24-10V70"/>
+    <ellipse cx="48" cy="70" rx="24" ry="10" fill="#ffffff" fill-opacity="0.12"/>
+    <!-- 위 동전 -->
+    <ellipse cx="48" cy="56" rx="24" ry="10" fill="#ffffff" fill-opacity="0.18"/>
+    <!-- 원화 표시 -->
+    <path d="M40 50l8 11 8-11" stroke-width="4"/>
+    <path d="M39 56h18" stroke-width="4"/>
+  </g>
+
+  <!-- 상승 추세 화살표 (최적화) -->
+  <g stroke="#9be8ff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <path d="M70 64l11-11 9 8 12-13"/>
+    <path d="M102 48v-9h-9"/>
+  </g>
+</svg>

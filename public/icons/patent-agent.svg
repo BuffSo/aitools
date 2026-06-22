@@ -1,0 +1,24 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="120" y2="120" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2d7dd2"/>
+      <stop offset="1" stop-color="#1749a6"/>
+    </linearGradient>
+  </defs>
+  <rect width="120" height="120" rx="30" fill="url(#bgGrad)"/>
+
+  <!-- 궤도 (멀티플랫폼 자율 운영) -->
+  <g stroke="#ffffff" stroke-width="5" fill="none">
+    <ellipse cx="60" cy="60" rx="34" ry="14" transform="rotate(-30 60 60)"/>
+    <ellipse cx="60" cy="60" rx="34" ry="14" transform="rotate(30 60 60)"/>
+  </g>
+
+  <!-- 궤도 노드 -->
+  <g fill="#ffffff">
+    <circle cx="31" cy="44" r="6"/>
+    <circle cx="89" cy="76" r="6"/>
+  </g>
+
+  <!-- AI 코어 -->
+  <circle cx="60" cy="60" r="13" fill="#9be8ff" stroke="#ffffff" stroke-width="4"/>
+</svg>

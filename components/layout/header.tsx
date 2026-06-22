@@ -13,12 +13,8 @@ import { NAV_ITEMS } from "@/content/nav";
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [mounted, setMounted] = useState(false);
   const hamburgerRef = useRef<HTMLButtonElement>(null);
   const closeBtnRef = useRef<HTMLButtonElement>(null);
-
-  // 포털은 클라이언트 마운트 이후에만 렌더 (SSR 안전)
-  useEffect(() => setMounted(true), []);
 
   function closeMobile() {
     setMobileOpen(false);
@@ -110,9 +106,9 @@ export function Header() {
         </button>
       </div>
 
-      {/* 모바일 드로어 — body로 포털 (헤더의 backdrop-filter containing block 회피) */}
-      {mounted &&
-        mobileOpen &&
+      {/* 모바일 드로어 — body로 포털 (헤더의 backdrop-filter containing block 회피).
+          mobileOpen은 클릭 후에만 true이므로 SSR 시 createPortal 미호출 → mounted 가드 불필요 */}
+      {mobileOpen &&
         createPortal(
           <div className="fixed inset-0 z-[60] md:hidden">
           <div

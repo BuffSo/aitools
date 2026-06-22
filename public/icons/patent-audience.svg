@@ -1,0 +1,28 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="120" y2="120" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2d7dd2"/>
+      <stop offset="1" stop-color="#00b4d8"/>
+    </linearGradient>
+  </defs>
+  <rect width="120" height="120" rx="30" fill="url(#bgGrad)"/>
+
+  <!-- 보조 인물 (좌우) -->
+  <g fill="#ffffff" fill-opacity="0.55">
+    <circle cx="34" cy="52" r="8"/>
+    <path d="M22 80c0-7 5.4-12 12-12s12 5 12 12z"/>
+    <circle cx="86" cy="52" r="8"/>
+    <path d="M74 80c0-7 5.4-12 12-12s12 5 12 12z"/>
+  </g>
+
+  <!-- 중심 인물 -->
+  <circle cx="58" cy="48" r="12" fill="#ffffff"/>
+  <path d="M38 84c0-11 9-20 20-20s20 9 20 20z" fill="#ffffff"/>
+
+  <!-- 확장 + 배지 -->
+  <circle cx="90" cy="32" r="11" fill="#9be8ff"/>
+  <g stroke="#1749a6" stroke-width="4" stroke-linecap="round">
+    <path d="M90 27v10"/>
+    <path d="M85 32h10"/>
+  </g>
+</svg>

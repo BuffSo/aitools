@@ -66,9 +66,15 @@ export function PatentContent() {
                 className="rounded-2xl border border-border bg-white p-6 shadow-sm transition-all hover:border-brand/40 hover:shadow-md sm:p-8"
               >
                 <div className="flex items-start gap-4">
-                  <span className="grid size-14 shrink-0 place-items-center rounded-2xl bg-gradient-to-br from-brand to-brand-mid text-white shadow-lg shadow-brand/30">
-                    <p.Icon className="size-7" aria-hidden />
-                  </span>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={p.iconSrc}
+                    alt=""
+                    aria-hidden
+                    width={56}
+                    height={56}
+                    className="size-14 shrink-0 rounded-2xl shadow-lg shadow-brand/30"
+                  />
                   <div className="min-w-0 flex-1">
                     <span className="inline-flex items-center rounded-full bg-brand/10 px-2.5 py-0.5 text-xs font-bold text-brand">
                       출원 {p.number}

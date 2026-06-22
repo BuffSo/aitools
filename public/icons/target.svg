@@ -1,0 +1,24 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="120" y2="120" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1749a6"/>
+      <stop offset="1" stop-color="#00b4d8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 배지 -->
+  <rect width="120" height="120" rx="30" fill="url(#bgGrad)"/>
+
+  <!-- 과녁 -->
+  <g stroke="#ffffff" stroke-width="5" fill="none">
+    <circle cx="52" cy="68" r="30"/>
+    <circle cx="52" cy="68" r="17"/>
+  </g>
+  <circle cx="52" cy="68" r="6.5" fill="#9be8ff"/>
+
+  <!-- 명중 화살 (타겟 추천) -->
+  <g stroke="#9be8ff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <path d="M52 68 95 33"/>
+    <path d="M64 65.5 52 68 55 56"/>
+  </g>
+</svg>
